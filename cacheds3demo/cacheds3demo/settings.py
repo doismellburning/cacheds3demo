@@ -85,3 +85,5 @@ STATIC_URL = '/static/'
 
 import django12factor
 globals().update(django12factor.factorise())
+
+STATICFILES_STORAGE = 'cacheds3demo.storage.CachedS3Storage'
