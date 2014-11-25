@@ -6,5 +6,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'cacheds3demo.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url('', include('core.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
