@@ -83,6 +83,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 import django12factor
-globals().update(django12factor.factorise())
+custom_settings = (
+    'AWS_STORAGE_BUCKET_NAME',
+)
+globals().update(django12factor.factorise(custom_settings=custom_settings))
 
-STATICFILES_STORAGE = 'cacheds3demo.storage.CachedS3Storage'
+if AWS_STORAGE_BUCKET_NAME is not None:
+    STATICFILES_STORAGE = 'cacheds3demo.storage.CachedS3Storage'
